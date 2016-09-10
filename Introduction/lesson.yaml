@@ -1,0 +1,11 @@
+- Class: meta
+  Course: DiagrammeR
+  Lesson: Introduction
+  Author: Jon Calder
+  Type: Standard
+  Organization: N/A
+  Version: 2.4.2
+
+- Class: text
+  Output: Welcome to this swirl course on the use of the DiagrammeR package. DiagrammeR allows one to create, modify, analyze, and 
+    visualize network graph diagrams in R.
