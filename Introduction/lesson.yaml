@@ -7,5 +7,6 @@
   Version: 2.4.2
 
 - Class: text
-  Output: Welcome to this swirl course on the use of the DiagrammeR package. DiagrammeR allows one to create, modify, analyze, and 
-    visualize network graph diagrams in R.
+  Output: Welcome to this swirl course on the use of the DiagrammeR package. 
+    DiagrammeR allows one to create, modify, analyze, and visualize network 
+    graph diagrams in R.
