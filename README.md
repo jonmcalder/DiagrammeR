@@ -34,7 +34,7 @@ install_course_github("jonmcalder", "Regular_Expressions")
 swirl()
 ```
 
-#### Overview
+## Overview
 
 The excellent [DiagrammeR](http://rich-iannone.github.io/DiagrammeR/) package, 
 is a tool for producing diagrams and network graphs in R. There is very good 
