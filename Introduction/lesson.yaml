@@ -10,3 +10,27 @@
   Output: Welcome to this swirl course on the use of the DiagrammeR package. 
     DiagrammeR allows one to create, modify, analyze, and visualize network 
     graph diagrams in R.
+    
+- Class: text
+  Output: If you are new to swirl, note that you can leave at any point during a 
+    lesson by simply hitting escape. Alternatively type info() in the R console 
+    to explore the navigation options within swirl and swirl lessons.
+    
+- Class: text
+  Output: It is highly recommended that you use RStudio for this course - since 
+    RStudio provides a number of useful features and support for the DiagrammeR 
+    package e.g. preview, export etc.
+
+- Class: text
+  Output: We also suggest that you maximise your R console window so that you 
+    can read all the lesson and console output with a minimum amount of 
+    scrolling back and forth. If you are using RStudio, it's probably best to 
+    keep the script editing pane small or minimized if/when you are not using 
+    it.
+    
+- Class: text
+  Output: The DiagrammeR package supports two key types of graph description 
+    languages - Graphviz and mermaid. One could say each outshines the other in 
+    some respects, but there are definitely similarities and a fair amount of 
+    overlap between them. We will provide a quick overview and some examples of 
+    each in this introduction.
