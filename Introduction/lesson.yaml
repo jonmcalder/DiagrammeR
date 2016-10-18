@@ -27,10 +27,51 @@
     scrolling back and forth. If you are using RStudio, it's probably best to 
     keep the script editing pane small or minimized if/when you are not using 
     it.
+
+- Class: cmd_question
+  Output: DiagrammeR was automatically installed (if necessary) and loaded when 
+    you started this lesson. But just to build the habit, (re)load the package 
+    with library(DiagrammeR).
+  CorrectAnswer: library(DiagrammeR)
+  AnswerTests: omnitest('library(DiagrammeR)')
+  Hint: Type library(DiagrammeR) to (re)load the DiagrammeR package.
     
 - Class: text
-  Output: The DiagrammeR package supports two key types of graph description 
-    languages - Graphviz and mermaid. One could say each outshines the other in 
-    some respects, but there are definitely similarities and a fair amount of 
-    overlap between them. We will provide a quick overview and some examples of 
-    each in this introduction.
+  Output: The DiagrammeR package supports two key graph description languages - 
+    Graphviz and mermaid. One could say each outshines the other in certain 
+    respects, but there are definitely similarities and a fair amount of overlap 
+    between them. Let's begin with a quick overview and some examples of each 
+    type of diagram.
+  
+- Class: text
+  Output: Graphviz diagrams are created using the DOT language, which is highly 
+    customizable and allows you to control line colors, arrow shapes, node shapes, 
+    and many other layout features. These Graphviz diagrams are created using the 
+    `grViz()` function. 
+  
+- Class: text
+  Output: The grViz() function takes a valid graph specification in the DOT 
+    language as it's main argument. The DOT graph description can either be 
+    delivered to grViz() in the form of a string, a reference to a Graphviz file 
+    (with a .gv file extension), or as a text connection.
+
+- Class: text
+  Output: A basic undirected, fully connected graph with 3 nodes A, B and C can 
+    be created with grViz("graph {A; B; C; A--B; B--C; A--C;}").
+    
+- Class: cmd_question
+  Output: Can you create the equivalent undirected, fully connected graph with 3 
+    nodes X, Y and Z?
+  CorrectAnswer: grViz("graph {X; Y; Z; X--Y; Y--Z; X--Z;}")
+  AnswerTests: omnitest(correctExpr=undirected_xyz)
+  Hint: Just repeat the above example, replacing "A" with "X", "B" with "Y", and 
+    "C" with "Z".
+  
+- Class: cmd_question
+  Output: Another graph example has been created for you in the R object 
+    graphviz_example. Use grViz() to render and view this example (you can use 
+    cat(graphviz_example) to inspect the DOT specification of the graph if 
+    you're curious).
+  CorrectAnswer: grViz(graphviz_example)
+  AnswerTests: omnitest(correctExpr='grViz(graphviz_example)')
+  Hint: Just type grViz(graphviz_example).
