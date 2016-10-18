@@ -38,16 +38,16 @@
     
 - Class: text
   Output: The DiagrammeR package supports two key graph description languages - 
-    Graphviz and mermaid. One could say each outshines the other in certain 
+    Graphviz and Mermaid. One could say each outshines the other in certain 
     respects, but there are definitely similarities and a fair amount of overlap 
     between them. Let's begin with a quick overview and some examples of each 
     type of diagram.
   
 - Class: text
   Output: Graphviz diagrams are created using the DOT language, which is highly 
-    customizable and allows you to control line colors, arrow shapes, node shapes, 
-    and many other layout features. These Graphviz diagrams are created using the 
-    `grViz()` function. 
+    customizable and allows you to control line colors, arrow shapes, node 
+    shapes, and many other layout features. These Graphviz diagrams are created 
+    in R using the `grViz()` function.
   
 - Class: text
   Output: The grViz() function takes a valid graph specification in the DOT 
@@ -75,3 +75,35 @@
   CorrectAnswer: grViz(graphviz_example)
   AnswerTests: omnitest(correctExpr='grViz(graphviz_example)')
   Hint: Just type grViz(graphviz_example).
+  
+- Class: text
+  Output: For Mermaid diagrams, DiagrammeR uses the processing function mermaid. 
+    What you pass into mermaid is a valid graph or sequence diagram 
+    specification. Like with grViz() the specification can be delivered to 
+    mermaid in the form of a string, a reference to a Mermaid file (with a .mmd 
+    file extension), or as a text connection.
+    
+- Class: cmd_question
+  Output: A simple Mermaid graph can be created with the command
+    mermaid("graph LR; A-->B; A-->C; B-->D; C-->D"). Give this a try now to see 
+    what the output looks like.
+  CorrectAnswer: mermaid("graph LR; A-->B; A-->C; B-->D; C-->D")
+  AnswerTests: omnitest(correctExpr=mermaid_abcd)
+  Hint: Simply copy the above command into the R console.
+  
+- Class: cmd_question
+  Output: Mermaid also supports a few other diagram types e.g. sequence diagrams
+    A sequence diagram has been created for you in the R object mermaid_example. 
+    Use mermaid() to render and view this example (and again if you're curious 
+    you can use cat(mermaid_example) to inspect the specification of the graph).
+  CorrectAnswer: mermaid(mermaid_example)
+  AnswerTests: omnitest(correctExpr='mermaid(mermaid_example)')
+  Hint: Just type mermaid(mermaid_example).
+  
+- Class: text
+  Output: That is really just the tip of the iceberg, but should give you a 
+    basic idea of the kind of thing DiagrammeR can help you to accomplish in R. 
+    It is a really flexible and powerful tool once you get familiar with the 
+    syntax for Graphviz and Mermaid. In the next lesson, we'll start diving 
+    into some more detail for Graphviz and the DOT language for specifying 
+    graphs.
