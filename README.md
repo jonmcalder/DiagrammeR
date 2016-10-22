@@ -30,7 +30,7 @@ Then to install this course and get started simply run:
  
  ```
 library(swirl)
-install_course_github("jonmcalder", "Regular_Expressions")
+install_course_github("jonmcalder", "DiagrammeR")
 swirl()
 ```
 
@@ -62,12 +62,10 @@ Thanks to the swirl developers
 @[ncarchedi](https://github.com/ncarchedi), 
 @[seankross](https://github.com/seankross), and 
 @[WilCrofter](https://github.com/WilCrofter) as well as many others who have 
-contributed code and/or learning content to swirl.
+contributed code and/or learning content to swirl. 
 
-I would like to commend them not only for the ease of use of both swirl and 
-swirlify, but especially for the excellent documentation surrounding the 
-learning and teaching components of this 'platform' as these are essential for 
-anyone looking to get started.
+I would like to commend them for the excellent documentation for swirl and 
+swirlify as these are essential for anyone looking to get started. 
 
 And of course big thanks to @[rich-iannone](https://github.com/rich-iannone), 
 the creator of the DiagrammeR package, who also sets a really high standard with 
