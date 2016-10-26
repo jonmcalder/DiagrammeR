@@ -25,7 +25,7 @@
   Output: We also suggest that you maximise your R console window so that you 
     can read all the lesson and console output with a minimum amount of 
     scrolling back and forth. If you are using RStudio, it's probably best to 
-    keep the script editing pane small or minimized if/when you are not using 
+    keep the script editing pane small or minimized when you are not using 
     it.
 
 - Class: cmd_question
@@ -68,10 +68,10 @@
     "C" with "Z".
   
 - Class: cmd_question
-  Output: Another graph example has been created for you in the R object 
-    graphviz_example. Use grViz() to render and view this example (you can use 
-    cat(graphviz_example) to inspect the DOT specification of the graph if 
-    you're curious).
+  Output: Another graph specification in the DOT language has been provided for 
+    you in the R object (string) graphviz_example. Use grViz() to render and 
+    view this example (you can use cat(graphviz_example) to inspect the DOT 
+    specification of the graph if you're curious).
   CorrectAnswer: grViz(graphviz_example)
   AnswerTests: omnitest(correctExpr='grViz(graphviz_example)')
   Hint: Just type grViz(graphviz_example).

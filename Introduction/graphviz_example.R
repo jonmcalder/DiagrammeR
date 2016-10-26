@@ -1,5 +1,5 @@
 graphviz_example <- "
-digraph neato {
+digraph graph_example {
 
 graph [layout = neato]
 
