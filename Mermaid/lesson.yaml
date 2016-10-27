@@ -5,3 +5,33 @@
   Type: Standard
   Organization: N/A
   Version: 2.4.2
+
+- Class: text
+  Output: In this lesson we will look at creating diagrams using mermaid. In a 
+    similar fashion to GraphViz, DiagrammeR provides the mermaid() function 
+    which takes a string argument (or file/text connection) specifying the 
+    details of the diagram.
+
+- Class: text
+  Output: mermaid supports a range of different diagram types, each of which are
+    specified in slightly different ways. We will first look at graphs and sub 
+    graphs (flowcharts), before moving on to sequence diagrams, and then finally 
+    Gant charts.
+  
+- Class: text
+  Output: The mermaid graph specification begins with a declaration of "graph" 
+    followed by the graph direction (which will determine the layout of the 
+    nodes within the graph). The direction can be left to right ("LR"),
+    right to left ("RL"), top to bottom/top down ("TB"/"TD"), or bottom to top 
+    ("BT").
+
+- Class: text
+  Output: This can then be followed by a declaration of nodes and/or nodes and 
+    edges. Nodes can be given arbitrary ID values and those IDs are displayed as 
+    text within their respective boxes. Connections between nodes are denoted 
+    by "-->" for arrow connections and "---" for line connections.
+      
+- Class: text
+  Output: For example, the command mermaid("graph LR;A-->B;A-->C;B-->D;C-->D"), 
+    will generate a graph with a series of nodes (A, B, C, D) arranged in a 
+    left-to-right layout, with the nodes connected with arrows.
