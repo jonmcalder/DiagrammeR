@@ -5,3 +5,30 @@
   Type: Standard
   Organization: N/A
   Version: 2.4.2
+
+- Class: text
+  Output: This lesson will focus on the GraphViz DOT language. As highlighted in
+    the introductory lesson, DiagrammeR provides the grViz() function for 
+    creating GraphViz graphs, to which a graph specification is provided as a 
+    string argument (or via a file connection). 
+    
+- Class: text
+  Output: The basic structure for the string provided to grViz() is 
+    "<1>[strict] <2>(graph | digraph) <3>[ID] { <4>stmt_list }". These 4 
+    elements will be described below.
+    
+- Class: text
+  Output: <1> Adding the optional "strict" declaration at the beginning of the 
+    graph specification prevents duplicate edges between any pair of nodes.
+    
+- Class: text
+  Output: <2> The graph can be either directed ("digraph") or undirected 
+    ("graph").
+
+- Class: text
+  Output: <3> The ID is an optional string name for the graph
+
+- Class: text
+  Output: <4> The statement list contains the 'meat' of the graph specification, 
+    detailing the nodes, edges, and the various attributes of each of these.
+    
