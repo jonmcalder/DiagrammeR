@@ -11,24 +11,34 @@
     the introductory lesson, DiagrammeR provides the grViz() function for 
     creating GraphViz graphs, to which a graph specification is provided as a 
     string argument (or via a file connection). 
-    
+
 - Class: text
   Output: The basic structure for the string provided to grViz() is 
-    "<1>[strict] <2>(graph | digraph) <3>[ID] { <4>stmt_list }". These 4 
-    elements will be described below.
+    "[strict] (graph | digraph) [ID] { stmt_list }". Lets go through each of 
+    these elements.
     
 - Class: text
-  Output: <1> Adding the optional "strict" declaration at the beginning of the 
-    graph specification prevents duplicate edges between any pair of nodes.
-    
-- Class: text
-  Output: <2> The graph can be either directed ("digraph") or undirected 
-    ("graph").
+  Output: The graph can be either directed ("digraph") or undirected 
+    ("graph"). In a directed graph each edge has an arrow at one end to 
+    indicate the direction of the relationship between the nodes.
 
 - Class: text
-  Output: <3> The ID is an optional string name for the graph
+  Output: The [strict] and [ID] elements are both optional. Adding the "strict" 
+    declaration at the beginning of the graph specification prevents duplicate 
+    edges between any pair of nodes (i.e. any duplicate edges will be ignored). 
+    The ID is simply a string name for the graph.
 
 - Class: text
-  Output: <4> The statement list contains the 'meat' of the graph specification, 
-    detailing the nodes, edges, and the various attributes of each of these.
-    
+  Output: The statement list (wrapped in curly brackets) contains the 'meat' of 
+    the graph specification, detailing the nodes, edges, and various attributes 
+    of each of these.
+
+- Class: cmd_question
+  Output: To illustrate this, let's look at a simple directed graph with 3 nodes 
+    Bob, Pete and Steve. The string object - 
+    BobPeteSteve <- "strict digraph SimpleABC {Bob->Pete;Pete->Steve;Steve->Bob}"
+    has been created for you. Pass this string as an argument to grViz() and 
+    examine the resulting diagram.
+  CorrectAnswer: grViz("strict digraph SimpleABC {Bob->Pete;Pete->Steve;Steve->Bob}")
+  AnswerTests: omnitest(correctVal="grViz(BobPeteSteve)")
+  Hint: Simply enter the command grViz(BobPeteSteve).
