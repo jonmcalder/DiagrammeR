@@ -32,20 +32,47 @@
     by "-->" for arrow connections and "---" for line connections.
       
 - Class: cmd_question
-  Output: For example, the command mermaid("graph LR;A-->B;A-->C;B-->D;C-->D"), 
-    will generate a graph with a series of nodes (A, B, C, D) arranged in a 
-    left-to-right layout, with the nodes connected with arrows. Give this a try 
-    now by copying or re-typing the above command and explore the resulting 
-    graph diagram to see how the node and edge commands are translated.
+  Output: Let's illustrate this mermaid graph specification with an example. The 
+    command mermaid("graph LR;A-->B;A-->C;B-->D;C-->D"), will generate a graph 
+    with a series of nodes A, B, C and D connected by a series of edges. Give 
+    this a try now by copying or re-typing the above command and then explore 
+    the resulting graph diagram to see how the node and edge commands are 
+    translated.
   CorrectAnswer: mermaid("graph LR;A-->B;A-->C;B-->D;C-->D")
-  AnswerTests: omnitest(correctVal = mermaid(ABCD))
+  AnswerTests: any_of_exprs(LR_ABCD)
   Hint: Copy the mermaid() command above to produce the graph.
+  
+- Class: text
+  Output: Note how the graph has been arranged in a left-to-right layout, with 
+    the nodes A, B, C and D connected with arrows. 
   
 - Class: text
   Output: Usually statements in a mermaid diagram specfication will each be 
     included on a separate line, but for simple diagrams (e.g. as above), this 
     can be done in a more succinct manner by including multiple statements on 
     a single line and separating them with semicolons.
-    
+  
+- Class: cmd_question
+  Output: Let's look at another similar example to help solidify your 
+    understanding. This time use the command 
+    mermaid("graph TB;A---B;A---C;B---D;C---D").
+  CorrectAnswer: mermaid("graph TB;A---B;A---C;B---D;C---D")
+  AnswerTests: any_of_exprs(TB_ABCD)
+  Hint: Copy the mermaid() command above to produce the graph.
 
+- Class: text
+  Output: Note how we again obtain a graph with nodes A, B, C and D, but this 
+    time the nodes have been arranged in a top-to-bottom layout, and with 
+    undirected edges i.e. lines instead of arrows
 
+- Class: cmd_question
+  Output: The simple use of "-->" for directed edges and "---" for undirected 
+    edges also makes it easy to create mixed graphs (where some edges are 
+    directed and some are undirected). Create a mermaid graph, laid out from 
+    right to left, with undirected edges between A & B and B & C, and a directed 
+    edge from C to D. Note that the edges should be specified in this order, 
+    since the ordering of nodes and edges does affect the layout of the graph.
+  CorrectAnswer: mermaid("graph RL;A---B;B---C;B-->D")
+  AnswerTests: any_of_exprs(RL_ABCD)
+  Hint: Call mermaid(), using "graph RL", with "---" for the edges AB & BC and 
+    "-->" for edge CD.
