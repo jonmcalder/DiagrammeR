@@ -31,7 +31,21 @@
     text within their respective boxes. Connections between nodes are denoted 
     by "-->" for arrow connections and "---" for line connections.
       
-- Class: text
+- Class: cmd_question
   Output: For example, the command mermaid("graph LR;A-->B;A-->C;B-->D;C-->D"), 
     will generate a graph with a series of nodes (A, B, C, D) arranged in a 
-    left-to-right layout, with the nodes connected with arrows.
+    left-to-right layout, with the nodes connected with arrows. Give this a try 
+    now by copying or re-typing the above command and explore the resulting 
+    graph diagram to see how the node and edge commands are translated.
+  CorrectAnswer: mermaid("graph LR;A-->B;A-->C;B-->D;C-->D")
+  AnswerTests: omnitest(correctVal = mermaid(ABCD))
+  Hint: Copy the mermaid() command above to produce the graph.
+  
+- Class: text
+  Output: Usually statements in a mermaid diagram specfication will each be 
+    included on a separate line, but for simple diagrams (e.g. as above), this 
+    can be done in a more succinct manner by including multiple statements on 
+    a single line and separating them with semicolons.
+    
+
+
