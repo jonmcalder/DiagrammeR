@@ -42,3 +42,28 @@
   CorrectAnswer: grViz("strict digraph SimpleABC {Bob->Pete;Pete->Steve;Steve->Bob}")
   AnswerTests: omnitest(correctVal="grViz(BobPeteSteve)")
   Hint: Simply enter the command grViz(BobPeteSteve).
+
+- Class: text
+  Output: The three most commonly used statements in the Graphviz DOT language 
+    are the graph statement (graph_stmt), the node statement (node_stmt), and 
+    the edge statement (edge_stmt). 
+    
+- Class: text
+  Output: Graph statements allow for attributes to be set for all components of 
+    the graph. Node statements define and provide attributes for graph nodes. 
+    Edge statements specify the edge operations between nodes and they supply 
+    attributes to the edges. For the edge operations, a directed graph requires 
+    that edges to be specified using the edge operator -> while an undirected 
+    graph requires edges to be specified using the -- operator.
+    
+- Class: text
+  Output: Between each of these statements are usually statement lists. Thus for 
+    a node statement, a list of nodes is expected. For an edge statement, a list 
+    of edge operations. Any of the list items can optionally have an attribute 
+    list (attr_list) which modify the attributes of either the node or edge.
+
+- Class: text
+  Output: Comments may be placed within the statement list. These can be marked 
+    using a // or a /* */ structure. Comment lines are denoted by a '#' 
+    character. Multiple statements within a statement list can be separated by 
+    linebreaks or ; characters between multiple statements.
