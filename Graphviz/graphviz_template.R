@@ -1,4 +1,4 @@
-grViz("
+boxes_and_circles <- grViz("
   digraph boxes_and_circles {
         
     # 'graph' statement
@@ -20,3 +20,5 @@ grViz("
     E->6 4->6 5->7 6->7 3->8
   }
 ")
+
+print(boxes_and_circles)

@@ -9,7 +9,4 @@
   )
 }
 
-source(file.path(.get_course_path(), "Diagrammer", "Graphviz", 
-                 "graphviz_template.R"))
-
 BobPeteSteve <- "strict digraph SimpleABC {Bob->Pete;Pete->Steve;Steve->Bob}"
