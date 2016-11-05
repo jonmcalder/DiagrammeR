@@ -67,3 +67,20 @@
     using a // or a /* */ structure. Comment lines are denoted by a '#' 
     character. Multiple statements within a statement list can be separated by 
     linebreaks or ; characters between multiple statements.
+
+#- Class: figure
+#  Output: Examine this figure.
+#  Figure: graphviz_template.R
+#  FigureType: new
+
+- Class: mult_question
+  Output: Are you happy to submit the log of this lesson to the course author 
+    via Google Forms? The log indicates which questions were attempted multiple 
+    times, skipped or correctly answered. This information will be used to 
+    identify problematic questions and make improvements. The data will be 
+    automatically populated in encoded form - all you need to do is click 
+    'Submit'.
+  AnswerChoices: Yes (will take you to the Google Form); No, not willing to help.
+  CorrectAnswer: Yes (will take you to the Google Form)
+  AnswerTests: submit_log()
+  Hint: Any response will be accepted.

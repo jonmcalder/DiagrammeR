@@ -3,6 +3,8 @@
       # the user's working directory and thus be accessible to them
       # throughout the lesson.
 
+swirl_options(swirl_logging = TRUE)
+
 LR_ABCD <- c("mermaid('graph LR;A-->B;A-->C;B-->D;C-->D')",
              "mermaid('graph LR; A-->B; A-->C; B-->D; C-->D')",
              "mermaid('graph LR;A --> B;A --> C;B --> D;C --> D')",
