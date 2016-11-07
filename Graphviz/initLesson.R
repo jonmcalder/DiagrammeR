@@ -11,4 +11,4 @@ swirl_options(swirl_logging = TRUE)
   )
 }
 
-BobPeteSteve <- "strict digraph SimpleABC {Bob->Pete;Pete->Steve;Steve->Bob}"
+BobPeteSteve <- "strict digraph BobPeteSteve {Bob->Pete;Pete->Steve;Steve->Bob}"

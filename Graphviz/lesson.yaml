@@ -36,12 +36,20 @@
 - Class: cmd_question
   Output: To illustrate this, let's look at a simple directed graph with 3 nodes 
     Bob, Pete and Steve. The string object - 
-    BobPeteSteve <- "strict digraph SimpleABC {Bob->Pete;Pete->Steve;Steve->Bob}"
+    BobPeteSteve <- "strict digraph BobPeteSteve {Bob->Pete;Pete->Steve;Steve->Bob}"
     has been created for you. Pass this string as an argument to grViz() and 
     examine the resulting diagram.
-  CorrectAnswer: grViz("strict digraph SimpleABC {Bob->Pete;Pete->Steve;Steve->Bob}")
+  CorrectAnswer: grViz("strict digraph BobPeteSteve {Bob->Pete;Pete->Steve;Steve->Bob}")
   AnswerTests: omnitest(correctVal="grViz(BobPeteSteve)")
   Hint: Simply enter the command grViz(BobPeteSteve).
+
+- Class: text
+  Output: Note that the diagram has now appeared in the Viewer. Three nodes Bob, 
+    Pete and Steve have been connected by three directed edges as indicated in 
+    the statement list. The graph has been named BobPeteSteve (though this name 
+    itself is not reflected in the diagram in any way). The strict declaration 
+    was inconsequential and simply for the purpose of illustration in this case 
+    since the statement list was very short and clearly no edges were duplicated.
 
 - Class: text
   Output: The three most commonly used statements in the Graphviz DOT language 
@@ -68,10 +76,10 @@
     character. Multiple statements within a statement list can be separated by 
     linebreaks or ; characters between multiple statements.
 
-#- Class: figure
-#  Output: Examine this figure.
-#  Figure: graphviz_template.R
-#  FigureType: new
+- Class: figure
+  Output: Examine this figure and use it to answer the questions which follow.
+  Figure: graphviz_template.R
+  FigureType: new
 
 - Class: mult_question
   Output: Are you happy to submit the log of this lesson to the course author 
