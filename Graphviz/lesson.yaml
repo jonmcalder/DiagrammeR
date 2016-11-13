@@ -80,7 +80,33 @@
   Output: Examine this figure and use it to answer the questions which follow.
   Figure: graphviz_template.R
   FigureType: new
-
+  
+- Class: mult_question
+  Output: What is different about the lettered nodes and the numbered nodes?
+  AnswerChoices: Different shapes (squares vs circles); Different edge types  
+  CorrectAnswer: Different shapes (squares vs circles)
+  AnswerTests: omnitest(correctVal = "Different shapes (squares vs circles)")
+  Hint: Edges are consistent across all nodes.
+  
+- Class: mult_question
+  Output: Which statement type in the GraphViz specification would have 
+    resulted in this diffference?
+  AnswerChoices: Graph statement; Node statement; Edge statement  
+  CorrectAnswer: Node statement
+  AnswerTests: omnitest(correctVal = "Node statement")
+  Hint: Are the affected attributes global (i.e. affect the whole diagram), node 
+    specific, or edge specific?
+    
+- Class: script
+  Output: Change/update the provided script (which was used to generate the 
+    graph diagram used previously), in order to make all nodes circles. Make 
+    sure to save any changes you make to the script and then enter "submit()" at 
+    the console.
+  AnswerTests: test_node_shape()
+  Hint: You will need to change the node shape attribute for the lettered nodes 
+    to match the node shape attribute of the numbered nodes. 
+  Script: node_shape.R
+  
 - Class: mult_question
   Output: Are you happy to submit the log of this lesson to the course author 
     via Google Forms? The log indicates which questions were attempted multiple 

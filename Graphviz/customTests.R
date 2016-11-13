@@ -52,3 +52,14 @@ submit_log <- function(){
     browseURL(paste0(pre_fill_link, encoded_log))
   }
 }
+
+test_node_shape <- function() {
+  try({
+    # Still need to add tests here in the form of regex checks
+    t1 <- TRUE
+    t2 <- TRUE
+    t3 <- TRUE
+    ok <- all(t1, t2, t3)
+  }, silent = TRUE)
+  exists('ok') && isTRUE(ok)
+}
