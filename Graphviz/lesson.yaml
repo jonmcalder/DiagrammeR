@@ -103,8 +103,8 @@
     sure to save any changes you make to the script and then enter "submit()" at 
     the console.
   AnswerTests: test_node_shape()
-  Hint: You will need to change the node shape attribute for the lettered nodes 
-    to match the node shape attribute of the numbered nodes. 
+  Hint: Change the node shape attribute for the lettered nodes to match the node 
+    shape attribute of the numbered nodes.
   Script: node_shape.R
   
 - Class: mult_question

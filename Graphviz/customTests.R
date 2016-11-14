@@ -54,10 +54,13 @@ submit_log <- function(){
 }
 
 test_node_shape <- function() {
+  # Get e
+  e <- get('e', parent.frame())
+  # Test expression from user's script
   try({
     # Still need to add tests here in the form of regex checks
-    t1 <- TRUE
-    t2 <- TRUE
+    t1 <- grepl(pattern = "node \\[shape = circle, fontname = Helvetica\\]", e$expr[1])
+    t2 <- !grepl(pattern = "node \\[shape = box", e$expr[1])
     t3 <- TRUE
     ok <- all(t1, t2, t3)
   }, silent = TRUE)
