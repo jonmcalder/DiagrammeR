@@ -98,7 +98,7 @@
     specific, or edge specific?
     
 - Class: script
-  Output: Change/update the provided script (which was used to generate the 
+  Output: Change the provided script (which was used to generate the 
     graph diagram used previously), in order to make all nodes circles. Make 
     sure to save any changes you make to the script and then enter "submit()" at 
     the console.
@@ -106,6 +106,46 @@
   Hint: Change the node shape attribute for the lettered nodes to match the node 
     shape attribute of the numbered nodes.
   Script: node_shape.R
+  
+- Class: text
+  Output: In addition to shape, there are a number of other node attributes 
+    which are also configurable. These include the node color, fillcolor, 
+    fontcolor, alpha, and many others. Node attributes are all specified by 
+    name-value pairs e.g. node [fontcolor = white, fillcolor = navy]
+    
+- Class: script
+  Output: To illustrate the aesthetic affect of node (color) attributes let's 
+    look at a practical example. Update the provided script to change the 
+    lettered nodes to have a limegreen color with a green border.
+  AnswerTests: test_node_attributes()
+  Hint: Use color = green and fillcolor = limegreen
+  Script: node_attributes.R
+  
+- Class: text
+  Output: Edge attributes can also be tweaked in a similar way to node 
+    attributes, though in the case of edges there are only two configurable 
+    attributes - the edge color and edge arrowhead (for directed graphs). 
+  
+- Class: script
+  Output: Let's continue along the lines of the previous graph example and now 
+    focus on changing the edge attributes. Update the provided script in such a
+    way that the edges between the lettered nodes are red with a 'diamond' 
+    arrowhead, the edges between the numbered nodes are blue with a 'dot' 
+    arrowhead, and the edges between the lettered and numbered nodes are black 
+    with a 'box' arrowhead.
+  AnswerTests: test_edge_attributes()
+  Hint: Update the edge attributes with color = red/blue/black and 
+    arrowhead = diamond/box/dot in the correct places within the script.
+  Script: edge_attributes.R
+  
+- Class: text
+  Output: Node and edge attributes should be pretty simple once you've played 
+    around with them a little, so rather than attempting to cover these fully 
+    here by way of numerous exercises etc you are encouraged to experiment 
+    further with these on your own until you feel comfortable. To do so you can 
+    make use of the reference docs available at 
+    http://rich-iannone.github.io/DiagrammeR/graphviz_and_mermaid.html which 
+    outline the full range of node and edge attributes, colors & shapes etc.
   
 - Class: mult_question
   Output: Are you happy to submit the log of this lesson to the course author 

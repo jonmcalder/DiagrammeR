@@ -58,11 +58,40 @@ test_node_shape <- function() {
   e <- get('e', parent.frame())
   # Test expression from user's script
   try({
-    # Still need to add tests here in the form of regex checks
     t1 <- grepl(pattern = "node \\[shape = circle, fontname = Helvetica\\]", e$expr[1])
     t2 <- !grepl(pattern = "node \\[shape = box", e$expr[1])
-    t3 <- TRUE
-    ok <- all(t1, t2, t3)
+    ok <- all(t1, t2)
+  }, silent = TRUE)
+  exists('ok') && isTRUE(ok)
+}
+
+test_node_attributes <- function() {
+  # Get e
+  e <- get('e', parent.frame())
+  # Test expression from user's script
+  try({
+    t1 <- grepl(pattern = "color = green", e$expr[1])
+    t2 <- grepl(pattern = "fillcolor = limegreen", e$expr[1])
+    t3 <- !grepl(pattern = "color = navy", e$expr[1])
+    t4 <- !grepl(pattern = "fillcolor = steelblue", e$expr[1])
+    ok <- all(t1, t2, t3, t4)
+  }, silent = TRUE)
+  exists('ok') && isTRUE(ok)
+}
+
+test_edge_attributes <- function() {
+  # Get e
+  e <- get('e', parent.frame())
+  x <<- e$expr[1]
+  # Test expression from user's script
+  try({
+    t1 <- grepl(pattern = "edge \\[color = red, arrowhead = diamond\\].*A->B B->C", e$expr[1])
+    t2 <- grepl(pattern = "edge \\[color = black, arrowhead = box\\].*A->1 A->2 B->3 B->4 C->5 C->6", e$expr[1])
+    t3 <- grepl(pattern = "edge \\[color = blue, arrowhead = dot\\].*1->3 2->4 3->5 4->6", e$expr[1])
+    t4 <- !grepl(pattern = "arrowhead = normal", e$expr[1])
+    t5 <- !grepl(pattern = "arrowhead = inv", e$expr[1])
+    t6 <- !grepl(pattern = "arrowhead = none", e$expr[1])
+    ok <- all(t1, t2, t3, t4, t5, t6)
   }, silent = TRUE)
   exists('ok') && isTRUE(ok)
 }
