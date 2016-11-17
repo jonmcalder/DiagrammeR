@@ -108,3 +108,16 @@ test_subgraph_rank <- function() {
   }, silent = TRUE)
   exists('ok') && isTRUE(ok)
 }
+
+test_subgraph_cluster <- function() {
+  # Get e
+  e <- get('e', parent.frame())
+  x <<- e$expr[1]
+  # Test expression from user's script
+  try({
+    t1 <- grepl(pattern = "subgraph cluster.* \\{a; b; g\\}", e$expr[1])
+    t2 <- !grepl(pattern = "subgraph cluster.* \\{a; b; c\\}", e$expr[1])
+    ok <- all(t1, t2)
+  }, silent = TRUE)
+  exists('ok') && isTRUE(ok)
+}

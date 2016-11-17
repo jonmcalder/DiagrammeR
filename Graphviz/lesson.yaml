@@ -200,6 +200,25 @@
     then means that (if supported), the resulting layout will have the nodes 
     belonging to the cluster drawn together, with the entire cluster also 
     contained within a bounding rectangle.
+    
+- Class: figure
+  Output: Examine the layout of the graph which is being displayed in the 
+    viewer. This graph contains a cluster subgraph (indicated by the presence of 
+    the bounding rectangle around nodes a, b and c). In the next question you 
+    will change this cluster to include different nodes in order to illustrate 
+    how subgraph clusters can affect the layout of a graph.
+  Figure: graphviz_subgraph_cluster.R
+  FigureType: new
+  
+- Class: script
+  Output: The provided script specifies the simple graph currently displayed and 
+    also defines a subgraph cluster containing the nodes a, b and c. Update this 
+    subgraph to include node g instead of node c, and note the change to the 
+    layout of the graph.
+  AnswerTests: test_subgraph_cluster()
+  Hint: Update the subgraph cluster to make it include nodes a, b and g 
+    instead of a, b and c.
+  Script: subgraph_cluster.R
   
 - Class: mult_question
   Output: Are you happy to submit the log of this lesson to the course author 
