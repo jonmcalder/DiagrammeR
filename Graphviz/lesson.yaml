@@ -146,6 +146,60 @@
     make use of the reference docs available at 
     http://rich-iannone.github.io/DiagrammeR/graphviz_and_mermaid.html which 
     outline the full range of node and edge attributes, colors & shapes etc.
+
+- Class: text
+  Output: Another valuable component of the dot language is subgraphs. A 
+    subgraph is simply a grouping of nodes wrapped within a set of curly 
+    brackets e.g. 'subgraph subG {X Y Z}' creates a subgraph named subG. 
+    Subgraphs play an important role in graph structure, influencing the layout 
+    for some graph types as well as providing a context for setting attributes.
+
+- Class: text
+  Output: A subgraph can provide a context for setting attributes. In the 
+    context of graph drawing, a more interesting example is
+    'subgraph {rank = same; A; B; C}'
+    This anonymous subgraph specifies that the nodes A, B and C should all be 
+    placed on the same rank (which usually means that they will be laid out in 
+    line with each other in the graph - subject to other layout constraints).
+
+- Class: figure
+  Output: Examine the layout of the graph which is being displayed in the 
+    viewer. In the next question you will manipulate the rank of some nodes in 
+    this graph using a subgraph in order to explore how rank can affect the 
+    layout of a graph.
+  Figure: graphviz_subgraph_rank.R
+  FigureType: new
+
+- Class: script
+  Output: The provided script specifies the simple graph currently displayed and 
+    also defines a subgraph containing the nodes a, b and c. Update this 
+    subgraph to give these three nodes the same rank (as outlined previously), 
+    and note the change to the layout of the graph.
+  AnswerTests: test_subgraph_rank()
+  Hint: Update the subgraph abc to make it's nodes share the same rank.
+  Script: subgraph_rank.R
+
+- Class: text
+  Output: Subgraphs also provide a convenient shorthand for edges. An edge 
+    statement allows a subgraph on both the left and right sides of the edge 
+    operator. When this occurs, an edge is created from every node on the left 
+    to every node on the right. For example, the specification 'A -> {B C}' is 
+    equivalent to 'A -> B; A -> C'
+
+- Class: figure
+  Output: The currently displayed graph was created with a single line 
+    specification which makes use of this edge shorthand - 
+    grViz("digraph { {A B} -> {C D} }")
+  Figure: graphviz_subgraph_edge_shorthand.R
+  FigureType: new
+
+- Class: text
+  Output: A special case for subgraphs involves how the graph will be laid out 
+    by certain layout types. If the name of the subgraph begins with 
+    cluster, Graphviz notes the subgraph as a special cluster subgraph. This 
+    then means that (if supported), the resulting layout will have the nodes 
+    belonging to the cluster drawn together, with the entire cluster also 
+    contained within a bounding rectangle.
   
 - Class: mult_question
   Output: Are you happy to submit the log of this lesson to the course author 
