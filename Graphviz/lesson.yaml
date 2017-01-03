@@ -116,7 +116,7 @@
 - Class: script
   Output: To illustrate the aesthetic affect of node (color) attributes let's 
     look at a practical example. Update the provided script to change the 
-    lettered nodes to have a limegreen color with a green border.
+    numbered nodes to have a limegreen color with a green border.
   AnswerTests: test_node_attributes()
   Hint: Use color = green and fillcolor = limegreen
   Script: node_attributes.R
