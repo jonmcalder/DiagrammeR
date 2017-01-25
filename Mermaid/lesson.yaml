@@ -76,6 +76,56 @@
   AnswerTests: any_of_exprs(RL_ABCD)
   Hint: Call mermaid(), using "graph RL", with "---" for the edges AB & BC and 
     "-->" for edge CD.
+    
+- Class: text
+  Output: When assigning nodes in mermaid, the node ID, node label and node 
+    shape can all be supplied together e.g. 'A[node A]' indicates a node with ID 
+    'A', label 'node A', and a rectangular shape (denoted by the square 
+    brackets).
+    
+- Class: cmd_question
+  Output: Update the below call to mermaid to create a graph with a single 
+    rectangular node, with ID "X" and label "node X". mermaid("graph LR;")
+  CorrectAnswer: mermaid("graph LR;X[node X]")
+  AnswerTests: omnitest(correctVal=LR_X)
+  Hint: Simply append "X[node X]" to the string argument of the call to mermaid()
+  
+- Class: text
+  Output: A number of other node shapes are possible in mermaid, these are a 
+    rounded rectangle "()", circle "(())", rhombus "{}" and a special asymmetric 
+    flag-like shape ">]". Let's do an example of each of these now.
+  
+- Class: cmd_question
+  Output: Use mermaid() to create a graph with a single rounded rectangular 
+    node, with ID "Y" and label "node Y".
+  CorrectAnswer: mermaid("graph LR;Y(node Y)")
+  AnswerTests: omnitest(correctVal=LR_Y)
+  Hint: As before, but use "Y(node Y)" in the string argument of the call to 
+    mermaid().
+  
+- Class: cmd_question
+  Output: Use mermaid() to create a graph with a single circular node, with ID 
+    "Z" and label "node Z".
+  CorrectAnswer: mermaid("graph LR;Z((node Z))")
+  AnswerTests: omnitest(correctVal=LR_Z)
+  Hint: As before, but use "Z((node Z))" in the string argument of the call to 
+    mermaid().
+
+- Class: cmd_question
+  Output: Use mermaid() to create a graph with a single rhombus-shaped node, 
+    with ID "XX" and label "node XX".
+  CorrectAnswer: mermaid("graph LR;XX{node XX}")
+  AnswerTests: omnitest(correctVal=LR_XX)
+  Hint: As before, but use "XX{node XX}" in the string argument of the call to 
+    mermaid().
+  
+- Class: cmd_question
+  Output: Use mermaid() to create a graph with a single flag-shaped node, with 
+    ID "ZZ" and label "node ZZ".
+  CorrectAnswer: mermaid("graph LR;ZZ>node ZZ]")
+  AnswerTests: omnitest(correctVal=LR_ZZ)
+  Hint: As before, but use "ZZ>node ZZ]" in the string argument of the call to 
+    mermaid().
 
 - Class: mult_question
   Output: Are you happy to submit the log of this lesson to the course author 

@@ -21,3 +21,16 @@ RL_ABCD <- c("mermaid('graph RL;A---B;B---C;B-->D')",
              "mermaid('graph RL;A --- B;B --- C;B --> D')",
              "mermaid('graph RL; A --- B; B --- C; B --> D')"
             )
+
+LR_X <- "mermaid('graph LR;X[node X]')"
+
+LR_Y <- "mermaid('graph LR;Y(node Y)')"
+
+LR_Z <- "mermaid('graph LR;Z((node Z))')"
+
+LR_XX <- "mermaid('graph LR;XX{node XX}')"
+
+LR_ZZ <- "mermaid('graph LR;ZZ>node ZZ]')"
+
+
+
