@@ -1,0 +1,21 @@
+- Class: meta
+  Course: DiagrammeR
+  Lesson: Node and Edge Data Frames
+  Author: Jon Calder
+  Type: Standard
+  Organization: N/A
+  Version: 2.4.2
+
+- Class: text
+  Output: In the previous lessons we looked at how to create diagrams using 
+    graphViz() and mermaid() which support the original syntax and framework for 
+    specifying diagrams for each of these respective libraries. We will now look 
+    at the building blocks for a completely different approach, which utilizes R 
+    functions to create diagrams iteratively.
+  
+- Class: text
+  Output: This lesson will be brief but important, as we outline the workings of 
+    four key functions - create_nodes(), create_edges(), combine_nodes() and 
+    combine_edges(). These functions are used to create and manipulate specialized 
+    data frames - node data frames (NDFs) and edge data frames (EDFs) - which can 
+    then in turn be used to create graph diagrams.

@@ -220,6 +220,10 @@
     instead of a, b and c.
   Script: subgraph_cluster.R
   
+- Class: text
+  Output: Now that we've explored the main elements of Graphviz diagrams, in the 
+    next lesson we'll walk explore what's possible with Mermaid diagrams.
+  
 - Class: mult_question
   Output: Are you happy to submit the log of this lesson to the course author 
     via Google Forms? The log indicates which questions were attempted multiple 
