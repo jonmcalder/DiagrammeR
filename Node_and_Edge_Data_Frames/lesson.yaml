@@ -15,7 +15,27 @@
   
 - Class: text
   Output: This lesson will be brief but important, as we outline the workings of 
-    four key functions - create_nodes(), create_edges(), combine_nodes() and 
-    combine_edges(). These functions are used to create and manipulate specialized 
+    four key functions - create_node_df(), create_edge_df(), combine_ndfs() and 
+    combine_edfs(). These functions are used to create and manipulate specialized 
     data frames - node data frames (NDFs) and edge data frames (EDFs) - which can 
     then in turn be used to create graph diagrams.
+
+- Class: text
+  Output: The create_node_df function is used to create a node data frame (NDF), 
+    which is really just an R data.frame object. It contains a row for each node 
+    and optional note attributes and/or additional data spread across the 
+    columns. The only required argument is "n", the number of nodes to be 
+    created in the NDF.
+    
+- Class: cmd_question
+  Output: Create an NDF with 5 nodes.
+  CorrectAnswer: create_node_df(10)
+  AnswerTests: omnitest(correctExpr='create_node_df(10)')
+  Hint: create_node_df(10)
+
+- Class: text
+  Output: As you can see, when creating a node data frame, the first column in 
+    the NDF contains the (unique) node IDs, followed by a type column and then a 
+    label column, which will both be NULL if not provided in the call to 
+    create_node_df().
+    
