@@ -29,13 +29,31 @@
     
 - Class: cmd_question
   Output: Create an NDF with 5 nodes.
-  CorrectAnswer: create_node_df(10)
-  AnswerTests: omnitest(correctExpr='create_node_df(10)')
-  Hint: create_node_df(10)
+  CorrectAnswer: create_node_df(5)
+  AnswerTests: omnitest(correctExpr='create_node_df(5)')
+  Hint: create_node_df(5)
 
 - Class: text
   Output: As you can see, when creating a node data frame, the first column in 
     the NDF contains the (unique) node IDs, followed by a type column and then a 
     label column, which will both be NULL if not provided in the call to 
-    create_node_df().
+    create_node_df(). Note too that setting 'label = TRUE' will label the nodes 
+    using the node IDs.
     
+- Class: text
+  Output: Additional node attributes can also be supplied in the function call, 
+    and these will be included in the NDF. Specific column names will be 
+    automatically recognised and treated as node attributes (e.g. color, 
+    fillcolor, fontcolor, fontname, fontsize etc), and all other columns will be 
+    ignored, which means one can include additional node data that may be useful 
+    for analysis.
+    
+- Class: script
+  Output: Update the code as instructed in the script.
+  AnswerTests: test_node_attributes()
+  Hint: Further node attribute columns 
+    can be created in the same way as the 'type' and 'label' columns. Check the 
+    list of specified node attribute columns in the script comments to find the 
+    correct column names and note that the attributes should be provided as 
+    either strings or numeric values.
+  Script: node_attributes.R
