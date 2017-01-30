@@ -221,6 +221,71 @@
   Script: subgraph_cluster.R
   
 - Class: text
+  Output: Graphviz layouts can also be modified quite radically by making use of 
+    different Graphviz layouts. Graphviz provides four different layouts - 'dot', 
+    'neato', 'twopi' and 'circo'.
+  
+- Class: figure
+  Output: You'll now see a completely new graph diagram displayed in the viewer. 
+    This graph uses the (default) Graphviz dot layout. The dot layout flows a 
+    directed graph in the direction of rank (i.e., downstream nodes of the same 
+    rank are aligned). By default, the direction is from top to bottom, but this 
+    can be changed with the 'rankdir' setting in the graph statement.
+  Figure: graphviz_node_layout.R
+  FigureType: new
+  
+- Class: script
+  Output: Take a look at the provided script and note in the graph statement 
+    where the rank direction ('rankdir') is specified. This statement isn't 
+    really necessary in this case since top-to-bottom is the default rank 
+    direction, but has been included for the sake of illustration. Update the 
+    script to change the rank direction to be left-to-right ('LR').
+  AnswerTests: test_node_layout_rankdir()
+  Hint: Simply replace the rankdir 'TB' with 'LR' near the top of the graphViz 
+    specification where the graph statement appears.
+  Script: node_layout_rankdir.R
+  
+- Class: text
+  Output: See how the whole graph layout has now been rotated? Let's try one of 
+    the other Graphviz layouts now.
+  
+- Class: script
+  Output: Update the provided script to change the graph layout from 'dot' 
+    to 'neato'.
+  AnswerTests: test_node_layout()
+  Hint: Simply replace 'dot' with 'neato' near the top of the graphViz 
+    specification where the graph layout is defined.
+  Script: node_layout.R
+  
+- Class: text
+  Output: Observe the new layout of the graph diagram. In this case, the result 
+    is a somewhat radial layout, but in general that is not always the case. The 
+    neato layout provides a class of layout sometimes referred to as a spring 
+    model layout. Essentially this layout attempts to minimize a global energy 
+    function, which is equivalent to statistical multi-dimensional scaling. This 
+    is usually a suitable layout if the graph is not too large (less than 100 
+    nodes) and you don't really know anything else in particular about it.
+    
+- Class: text
+  Output: Let's now also have a look at the remaining two Graphviz layouts, 
+    again utilizing the same underlying graph in order to facilitate comparison 
+    with the two layout types we have seen already.
+  
+- Class: figure
+  Output: This graph uses the 'twopi' layout. The twopi layout provides radial 
+    layouts. Nodes are placed on concentric circles depending their distance 
+    from a given root node.
+  Figure: graphviz_node_layout_twopi.R
+  FigureType: new
+  
+- Class: figure
+  Output: And this graph uses the 'circo' layout, which is for circular layout 
+    results. This layout is usually suitable for certain diagrams with multiple 
+    cyclic structures, such as telecommunications networks.
+  Figure: graphviz_node_layout_circo.R
+  FigureType: new
+  
+- Class: text
   Output: Now that we've explored the main elements of Graphviz diagrams, in the 
     next lesson we'll walk explore what's possible with Mermaid diagrams.
   

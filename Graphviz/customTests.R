@@ -121,3 +121,29 @@ test_subgraph_cluster <- function() {
   }, silent = TRUE)
   exists('ok') && isTRUE(ok)
 }
+
+test_node_layout <- function() {
+  # Get e
+  e <- get('e', parent.frame())
+  x <<- e$expr[1]
+  # Test expression from user's script
+  try({
+    t1 <- grepl(pattern = "graph \\[.*layout = neato.*\\]", e$expr[1])
+    t2 <- !grepl(pattern = "graph \\[.*layout = dot.*\\]", e$expr[1])
+    ok <- all(t1, t2)
+  }, silent = TRUE)
+  exists('ok') && isTRUE(ok)
+}
+
+test_node_layout_rankdir <- function() {
+  # Get e
+  e <- get('e', parent.frame())
+  x <<- e$expr[1]
+  # Test expression from user's script
+  try({
+    t1 <- grepl(pattern = "graph \\[.*rankdir = LR.*\\]", e$expr[1])
+    t2 <- !grepl(pattern = "graph \\[.*rankdir = TB.*\\]", e$expr[1])
+    ok <- all(t1, t2)
+  }, silent = TRUE)
+  exists('ok') && isTRUE(ok)
+}
