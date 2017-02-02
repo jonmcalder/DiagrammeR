@@ -21,7 +21,7 @@
     then in turn be used to create graph diagrams.
 
 - Class: text
-  Output: The create_node_df function is used to create a node data frame (NDF), 
+  Output: The create_node_df() function is used to create a node data frame (NDF), 
     which is really just an R data.frame object. It contains a row for each node 
     and optional note attributes and/or additional data spread across the 
     columns. The only required argument is "n", the number of nodes to be 
@@ -49,14 +49,18 @@
     for analysis.
     
 - Class: script
-  Output: Update the code as instructed in the script.
+  Output: Update the code as instructed in the script, then save and type 
+    'submit()' at the console.
   AnswerTests: test_node_attributes()
-  Hint: Further node attribute columns 
-    can be created in the same way as the 'type' and 'label' columns. Check the 
-    list of specified node attribute columns in the script comments to find the 
-    correct column names and note that the attributes should be provided as 
-    either strings or numeric values.
+  Hint: Further node attribute columns can be created in the same way as the 
+    'type' and 'label' columns. Check the list of specified node attribute 
+    columns in the script comments to find the correct column names and note 
+    that the attributes should be provided as either strings or numeric values.
   Script: node_attributes.R
+  
+- Class: text
+  Output: Observe how the node data frame has now been updated to include 
+    columns for these node attributes.
 
 - Class: mult_question
   Output: Are you happy to submit the log of this lesson to the course author 

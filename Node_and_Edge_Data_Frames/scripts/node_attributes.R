@@ -1,5 +1,5 @@
 # Below is a list of all the node attribute columns that will be automatically
-# recognized with a node data frame in DiagrammeR.
+# recognized within a node data frame in DiagrammeR.
 # 
 # color — provide an X11 or hexadecimal color (append 2 digits to hex for alpha)
 # distortion — the node distortion for any shape = polygon
@@ -26,3 +26,5 @@
 # - the font size for the node labels should be 15
 
 graph_x_ndf <- create_node_df(n = 10, type = "letter", label = letters[1:10])
+
+print(graph_x_ndf)
