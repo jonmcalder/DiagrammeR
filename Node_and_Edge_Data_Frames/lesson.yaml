@@ -23,7 +23,7 @@
 - Class: text
   Output: The create_node_df() function is used to create a node data frame (NDF), 
     which is really just an R data.frame object. It contains a row for each node 
-    and optional note attributes and/or additional data spread across the 
+    and optional node attributes and/or additional data spread across the 
     columns. The only required argument is "n", the number of nodes to be 
     created in the NDF.
     
@@ -61,6 +61,50 @@
 - Class: text
   Output: Observe how the node data frame has now been updated to include 
     columns for these node attributes.
+    
+- Class: text
+  Output: The create_edge_df() function is used to create an edge data frame (EDF). 
+    As with the node data frame, this is just an R data.frame object. It contains 
+    a row for each edge, where each row has an edge ID, a 'from' node ID and a 
+    'to' node ID, as well as an optional 'rel' (relationship type). Additional 
+    edge attributes can be included in the edge data frame as well. The 
+    required arguments to the function are the 'from' & 'to' vectors (which 
+    should obviously contain valid node IDs for the relevant node data frame).
+    
+- Class: cmd_question
+  Output: Create an EDF which specifies edges from nodes 10 to 1, 9 to 2, 7 to 3, 
+    ..., 2 to 9, 1 to 10.
+  CorrectAnswer: create_edge_df(from = 10:1, to = 1:10)
+  AnswerTests: omnitest(correctExpr='create_edge_df(from = 10:1, to = 1:10)')
+  Hint: create_edge_df(from = 5:1, to = 1:5)
+
+- Class: text
+  Output: As you can see, when creating an edge data frame, the first column in 
+    the EDF contains the (unique) edge IDs, followed by a from column and then a 
+    to column. Then follows the edge type (rel), which is NA by default if not 
+    specified.
+    
+- Class: text
+  Output: As already indicated, additional edge attributes can also be supplied 
+    in the function call, and these will be included in the EDF. Specific column 
+    names will be automatically recognised and treated as edge attributes 
+    (e.g. color, label, fontcolor, arrowhead, arrowsize etc), and all other 
+    columns will be ignored, which means one can include additional edge data 
+    that may be useful for analysis.
+
+- Class: script
+  Output: Update the code as instructed in the script, then save and type 
+    'submit()' at the console.
+  AnswerTests: test_edge_attributes()
+  Hint: Further edge attribute columns can be created in the same way as the 
+    'from' and 'to' columns. Check the list of specified edge attribute 
+    columns in the script comments to find the correct column names and note 
+    that the attributes should be provided as either strings or numeric values.
+  Script: edge_attributes.R
+  
+- Class: text
+  Output: Observe how the edge data frame has now been updated to include 
+    columns for these edge attributes.
 
 - Class: mult_question
   Output: Are you happy to submit the log of this lesson to the course author 

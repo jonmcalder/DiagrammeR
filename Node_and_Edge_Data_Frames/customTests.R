@@ -62,3 +62,13 @@ test_node_attributes <- function() {
   }, silent = TRUE)
   exists('ok') && isTRUE(ok)
 }
+
+test_edge_attributes <- function() {
+  try({
+    t1 <- identical(graph_x_edf$color, rep("blue", 10))
+    t2 <- identical(graph_x_edf$arrowhead, rep("dot", 10))
+    t3 <- identical(graph_x_edf$label, 1:10)
+    ok <- all(t1, t2, t3)
+  }, silent = TRUE)
+  exists('ok') && isTRUE(ok)
+}
