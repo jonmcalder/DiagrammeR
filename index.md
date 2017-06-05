@@ -1,4 +1,7 @@
+# DiagrammeR
+
 [![Project Status: WIP - Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](http://www.repostatus.org/badges/latest/wip.svg)](http://www.repostatus.org/#wip)
+[![Build Status](https://travis-ci.org/jonmcalder/DiagrammeR.svg?branch=master)](https://travis-ci.org/jonmcalder/DiagrammeR)
 
 This is a course for use with the 
 [swirl R package](https://cran.r-project.org/web/packages/swirl/index.html). 
@@ -67,4 +70,4 @@ I would like to commend them for the excellent documentation for **swirl** and
 
 And of course big thanks to @[rich-iannone](https://github.com/rich-iannone), 
 the creator of the awesome DiagrammeR package, who has also clearly put a lot of 
-effort into the documentation for the package and it shows.
+effort into the documentation for the package.
