@@ -52,3 +52,36 @@ submit_log <- function(){
     browseURL(paste0(pre_fill_link, encoded_log))
   }
 }
+
+test_grViz_XYZ <- function() {
+  # Get e
+  e <- get('e', parent.frame())
+  # Test grViz class
+  # Regex tests on $diagram syntax
+  try({
+    t1 <- is(e$val, c("grViz", "htmlwidget"))
+    t2 <- grepl(pattern = ".*graph.*\\{.*;.*;.*\\}.*", e$val$x$diagram)
+    t3 <- grepl(pattern = "X\\s*--\\s*Y|Y\\s*--\\s*X", e$val$x$diagram)
+    t4 <- grepl(pattern = "Y\\s*--\\s*Z|Z\\s*--\\s*Y", e$val$x$diagram)
+    t5 <- grepl(pattern = "X\\s*--\\s*Z|Z\\s*--\\s*X", e$val$x$diagram)
+    ok <- all(t1, t2, t3, t4, t5)
+  }, silent = TRUE)
+  exists('ok') && isTRUE(ok)
+}
+
+test_mermaid_ABCD <- function() {
+  # Get e
+  e <- get('e', parent.frame())
+  # Test mermaid class
+  # Regex tests on $diagram syntax
+  try({
+    t1 <- is(e$val, c("DiagrammeR", "htmlwidget"))
+    t2 <- grepl(pattern = ".*graph.*;.*;.*;.*;.*", e$val$x$diagram)
+    t3 <- grepl(pattern = "A\\s*-->\\s*B", e$val$x$diagram)
+    t4 <- grepl(pattern = "A\\s*-->\\s*C", e$val$x$diagram)
+    t5 <- grepl(pattern = "B\\s*-->\\s*D", e$val$x$diagram)
+    t6 <- grepl(pattern = "C\\s*-->\\s*D", e$val$x$diagram)
+    ok <- all(t1, t2, t3, t4, t5, t6)
+  }, silent = TRUE)
+  exists('ok') && isTRUE(ok)
+}

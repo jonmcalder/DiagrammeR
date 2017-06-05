@@ -17,6 +17,3 @@ source(file.path(.get_course_path(), "Diagrammer", "Introduction",
 source(file.path(.get_course_path(), "Diagrammer", "Introduction", 
                  "mermaid_example.R"))
 
-undirected_xyz <- "grViz('graph {X; Y; Z; X--Y; Y--Z; X--Z;}')"
-
-mermaid_abcd <- "mermaid('graph LR; A-->B; A-->C; B-->D; C-->D')"
