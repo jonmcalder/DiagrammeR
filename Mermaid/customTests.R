@@ -52,3 +52,16 @@ submit_log <- function(){
     browseURL(paste0(pre_fill_link, encoded_log))
   }
 }
+
+test_mermaid_regex <- function(regex_patterns) {
+  # Get e
+  e <- get('e', parent.frame())
+  # Test mermaid class
+  # Regex tests on $diagram syntax
+  try({
+    t1 <- is(e$val, c("DiagrammeR", "htmlwidget"))
+    t2 <- sapply(regex_patterns, grepl, e$val$x$diagram)
+    ok <- all(t1, t2)
+  }, silent = TRUE)
+  exists('ok') && isTRUE(ok)
+}

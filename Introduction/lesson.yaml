@@ -63,7 +63,7 @@
   Output: Can you create the equivalent undirected, fully connected graph with 3 
     nodes X, Y and Z?
   CorrectAnswer: grViz("graph {X; Y; Z; X--Y; Y--Z; X--Z;}")
-  AnswerTests: test_grViz_XYZ()
+  AnswerTests: test_grViz_regex(grViz_XYZ)
   Hint: Just repeat the above example, replacing "A" with "X", "B" with "Y", and 
     "C" with "Z".
   
@@ -88,7 +88,7 @@
     mermaid("graph LR; A-->B; A-->C; B-->D; C-->D"). Give this a try now to see 
     what the output looks like.
   CorrectAnswer: mermaid("graph LR; A-->B; A-->C; B-->D; C-->D")
-  AnswerTests: test_mermaid_ABCD()
+  AnswerTests: test_mermaid_regex(mermaid_ABCD)
   Hint: Simply copy the above command into the R console.
   
 - Class: cmd_question

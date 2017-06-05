@@ -5,32 +5,29 @@
 
 swirl_options(swirl_logging = TRUE)
 
-LR_ABCD <- c("mermaid('graph LR;A-->B;A-->C;B-->D;C-->D')",
-             "mermaid('graph LR; A-->B; A-->C; B-->D; C-->D')",
-             "mermaid('graph LR;A --> B;A --> C;B --> D;C --> D')",
-             "mermaid('graph LR; A --> B; A --> C; B --> D; C --> D')"
-             )
-TB_ABCD <- c("mermaid('graph TB;A---B;A---C;B---D;C---D')",
-             "mermaid('graph TB; A---B; A---C; B---D; C---D')",
-             "mermaid('graph TB;A --- B;A --- C;B --- D;C --- D')",
-             "mermaid('graph TB; A --- B; A --- C; B --- D; C --- D')"
-            )
+LR_ABCD <- c("\\s*graph LR;.+;.+;.+;.+",
+             "A\\s*-->\\s*B",
+             "A\\s*-->\\s*C",
+             "B\\s*-->\\s*D",
+             "C\\s*-->\\s*D")
              
-RL_ABCD <- c("mermaid('graph RL;A---B;B---C;B-->D')",
-             "mermaid('graph RL; A---B; B---C; B-->D')",
-             "mermaid('graph RL;A --- B;B --- C;B --> D')",
-             "mermaid('graph RL; A --- B; B --- C; B --> D')"
-            )
+TB_ABCD <- c("\\s*graph TB;.+;.+;.+;.+",
+             "A\\s*---\\s*B",
+             "A\\s*---\\s*C",
+             "B\\s*---\\s*D",
+             "C\\s*---\\s*D")
 
-LR_X <- "mermaid('graph LR;X[node X]')"
+RL_ABCD <- c("\\s*graph RL;.+;.+;.+",
+             "A\\s*---\\s*B",
+             "B\\s*---\\s*C",
+             "B\\s*-->\\s*D")
 
-LR_Y <- "mermaid('graph LR;Y(node Y)')"
+LR_X <- c("\\s*graph LR;\\s*X\\[\\s*node\\s*X\\s*\\]")
 
-LR_Z <- "mermaid('graph LR;Z((node Z))')"
+LR_Y <- c("\\s*graph LR;\\s*Y\\(\\s*node\\s*Y\\s*\\)")
 
-LR_XX <- "mermaid('graph LR;XX{node XX}')"
+LR_Z <- c("\\s*graph LR;\\s*Z\\(\\(\\s*node\\s*Z\\)\\)")
 
-LR_ZZ <- "mermaid('graph LR;ZZ>node ZZ]')"
+LR_XX <- c("\\s*graph LR;\\s*XX\\{\\s*node\\s*XX\\}") 
 
-
-
+LR_ZZ <- c("\\s*graph LR;\\s*ZZ>\\s*node\\s*ZZ\\]")

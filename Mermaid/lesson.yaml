@@ -39,7 +39,7 @@
     the resulting graph diagram to see how the node and edge commands are 
     translated.
   CorrectAnswer: mermaid("graph LR;A-->B;A-->C;B-->D;C-->D")
-  AnswerTests: any_of_exprs(LR_ABCD)
+  AnswerTests: test_mermaid_regex(LR_ABCD)
   Hint: Copy the mermaid() command above to produce the graph.
   
 - Class: text
@@ -57,7 +57,7 @@
     understanding. This time use the command 
     mermaid("graph TB;A---B;A---C;B---D;C---D").
   CorrectAnswer: mermaid("graph TB;A---B;A---C;B---D;C---D")
-  AnswerTests: any_of_exprs(TB_ABCD)
+  AnswerTests: test_mermaid_regex(TB_ABCD)
   Hint: Copy the mermaid() command above to produce the graph.
 
 - Class: text
@@ -73,7 +73,7 @@
     edge from C to D. Note that the edges should be specified in this order, 
     since the ordering of nodes and edges does affect the layout of the graph.
   CorrectAnswer: mermaid("graph RL;A---B;B---C;B-->D")
-  AnswerTests: any_of_exprs(RL_ABCD)
+  AnswerTests: test_mermaid_regex(RL_ABCD)
   Hint: Call mermaid(), using "graph RL", with "---" for the edges AB & BC and 
     "-->" for edge CD.
     
@@ -87,7 +87,7 @@
   Output: Update the below call to mermaid to create a graph with a single 
     rectangular node, with ID "X" and label "node X". mermaid("graph LR;")
   CorrectAnswer: mermaid("graph LR;X[node X]")
-  AnswerTests: omnitest(correctVal=LR_X)
+  AnswerTests: test_mermaid_regex(LR_X)
   Hint: Simply append "X[node X]" to the string argument of the call to mermaid()
   
 - Class: text
@@ -99,7 +99,7 @@
   Output: Use mermaid() to create a graph with a single rounded rectangular 
     node, with ID "Y" and label "node Y".
   CorrectAnswer: mermaid("graph LR;Y(node Y)")
-  AnswerTests: omnitest(correctVal=LR_Y)
+  AnswerTests: test_mermaid_regex(LR_Y)
   Hint: As before, but use "Y(node Y)" in the string argument of the call to 
     mermaid().
   
@@ -107,7 +107,7 @@
   Output: Use mermaid() to create a graph with a single circular node, with ID 
     "Z" and label "node Z".
   CorrectAnswer: mermaid("graph LR;Z((node Z))")
-  AnswerTests: omnitest(correctVal=LR_Z)
+  AnswerTests: test_mermaid_regex(LR_Z)
   Hint: As before, but use "Z((node Z))" in the string argument of the call to 
     mermaid().
 
@@ -115,7 +115,7 @@
   Output: Use mermaid() to create a graph with a single rhombus-shaped node, 
     with ID "XX" and label "node XX".
   CorrectAnswer: mermaid("graph LR;XX{node XX}")
-  AnswerTests: omnitest(correctVal=LR_XX)
+  AnswerTests: test_mermaid_regex(LR_XX)
   Hint: As before, but use "XX{node XX}" in the string argument of the call to 
     mermaid().
   
@@ -123,7 +123,7 @@
   Output: Use mermaid() to create a graph with a single flag-shaped node, with 
     ID "ZZ" and label "node ZZ".
   CorrectAnswer: mermaid("graph LR;ZZ>node ZZ]")
-  AnswerTests: omnitest(correctVal=LR_ZZ)
+  AnswerTests: test_mermaid_regex(LR_ZZ)
   Hint: As before, but use "ZZ>node ZZ]" in the string argument of the call to 
     mermaid().
 

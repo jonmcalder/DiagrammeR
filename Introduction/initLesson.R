@@ -17,3 +17,13 @@ source(file.path(.get_course_path(), "Diagrammer", "Introduction",
 source(file.path(.get_course_path(), "Diagrammer", "Introduction", 
                  "mermaid_example.R"))
 
+grViz_XYZ <- c(".*graph.*\\{.+;.+;.+\\}.*",
+               "X\\s*--\\s*Y|Y\\s*--\\s*X",
+               "Y\\s*--\\s*Z|Z\\s*--\\s*Y",
+               "X\\s*--\\s*Z|Z\\s*--\\s*X")
+
+mermaid_ABCD <- c(".*graph LR;.+;.+;.+;.+",
+                  "A\\s*-->\\s*B",
+                  "A\\s*-->\\s*C",
+                  "B\\s*-->\\s*D",
+                  "C\\s*-->\\s*D")
